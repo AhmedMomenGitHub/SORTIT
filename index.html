@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة ذكاء الأطفال</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      
+
+   
+    <!-- <div class="duplicate">
+
+        <div class="dash">
+            <div class="over">انتهت اللعبة</div>
+            <div class="score">score:</div>
+
+        </div>
+  
+
+      <button>العب مرة أخرى </button>
+    </div> -->
+   
+    <div class="win"> No way </div>
+
+ 
+    <div id="mainmenu">
+        <div id="particles-js"></div>
+
+        <h1 id="gameTitle">SORTIT</h1>
+        <div onclick="intro()" class="polybtn"  >
+            <img class="poly" src="poly_00000.png" alt="" srcset="">
+            <img class="tri" src="trifill_00000.png" alt="" srcset="">
+            <h2 id="ready">إستعد</h2>
+     
+        </div>
+        <div class="menu">
+    
+    
+    
+            <button onclick=" displayLevels()" id="levelSelect" class="set"> المسـتـوى </button>
+            <button class="set"> الاعدادت </button>
+            <button class="set"> عن اللعبة </button>
+    
+    
+        </div>
+    
+      
+      
+    </div>
+    
+    <div id="levelSelection" class="levels">
+        <div class="select">
+        <label for="level">اختر مستوى الصعوبة</label>
+        <select id="level">
+            <option value="easy">سهل</option>
+            <option value="medium">متوسط</option>
+            <option value="hard">صعب</option>
+        </select>
+    </div>
+   
+    <button onclick="hideLevels()">الرئيسية</button>
+    </div>
+
+    
+    <div id="gameContainer" style="display: none;">
+        
+        <div class="gameover" id="gameOver">
+            <div class="box"> 
+                 <h5 id="gameError">انتهى الوقت</h5>
+                <h5 id="result">: حصلت على </h5>
+                <button onclick="hideGameAndReturnHome()">الرئيسية</button></div>
+          
+        </div>
+
+        <div id="guid" class="guides" >
+            <div class="solve">
+                معك دقيقة واحدة ابدأ الان 
+            </div>
+    
+        </div>
+        <div class="data">
+            <div id="score"> Score: 0 </div>
+            <div id="timer" > Time: 1:00</div>
+    
+        </div>
+    
+
+        <div class="arrContainer">
+            <img class="arrbox" src="score.png" alt="" srcset="">
+            <div id="numbersContainer"></div>
+            <div id="buttonsContainer">
+                <!-- <button  onclick="checkSolution()">التحقق</button> -->
+                <button class="reset" id="reload" onclick="retryWithoutChange()"> <img class="reload_img" src="reload_00000.png" alt="" srcset=""></button>
+                <!-- <button onclick="changeNumbers()">تغيير الأرقام</button> -->
+                <button class="reset" id="back" onclick="removeLastNumber()"><img src="back_00000.png" alt="" srcset=""></button>
+    
+            </div>
+            <div id="selectedNumbers"></div>
+
+    
+            <button class="startGame" onclick="hideGameAndReturnHome()">رجوع للرئيسية  </button>
+    
+        </div>
+  
+    </div>
+
+    <script src="script.js"></script>
+    <script  src="particles.js"></script>
+
+    <script  src="app.js"></script>
+
+
+</body>
+</html>

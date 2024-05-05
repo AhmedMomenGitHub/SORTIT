@@ -1,0 +1,1281 @@
+/* styles.css */
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+}
+
+#gameContainer {
+    transition: 1s cubic-bezier(.07,.01,1,.01);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+
+
+
+    
+}
+
+.arrContainer{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+width: 100%; 
+height: 100vh;
+gap: 50px;
+
+
+}
+#gameContainer{
+    position: absolute;
+    animation: start .5s  ease;
+    
+
+}
+
+
+.endgameContainer{
+    /* animation: end 1s ease; */
+
+
+}
+
+
+.vfx{
+  animation: vfx .5s cubic-bezier(0,.81,0,.99);
+
+}
+
+
+@keyframes vfx{
+    from{
+        filter:brightness(100) invert() saturate();
+         
+  }
+}
+@keyframes start{
+    from{
+        scale: 0;
+        filter:brightness(100) invert();
+         
+  }
+}
+@keyframes end{
+    to{
+        opacity: 0;
+        scale: .5;
+
+    }
+}
+
+#buttonsContainer {
+    margin-top: 50px;
+    display: flex;
+    gap: 40px;
+    animation: up .5s ease;
+}
+@keyframes up{
+    from{
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+}
+
+#numbersContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* ثلاثة أعمدة بنسبة متساوية */
+    gap: 80px; 
+    transition: 0.5s;
+}
+@keyframes swap {
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(.7);
+
+    }
+}
+
+
+
+#numbersContainer span, #selectedNumbers span {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 30px;
+    font-family: zekton;
+    /* border: 1px solid; */
+    width: 100px;
+    /* border-top-left-radius: 20px;
+    border-top-right-radius: 20px; */
+    background: linear-gradient(30deg, rgba(0, 0, 0, 0.364) , rgb(29, 29, 29));
+    cursor: pointer;
+    opacity: 100%;
+    border: 1px solid black;
+    transition: 0.2s ease-out;
+    display: flex;justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    border: 1px solid ;
+    animation: rotate .5s  cubic-bezier(.99,-0.01,.02,.99) ;
+    
+
+}
+@keyframes rotate{
+    from{
+        transform: rotateY(360deg);
+    }
+}
+
+#numbersContainer span:hover, #selectedNumbers span:hover {
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+    scale: 1.2;
+}
+
+#selectedNumbers {
+    font-size: 30px;
+    color: #ffffff;
+
+
+}
+@keyframes done {
+   to{
+    transform: translateY(15rem) rotate(90deg);
+    transform-origin: left;
+  
+
+   }
+
+}
+
+button:hover{
+    color: white;
+
+}
+
+select{
+    font-size: 40px;
+    background-color: black;
+    color: white;
+ 
+    text-align: center;
+     padding-inline: 50px;
+     padding-bottom: 20px;
+     padding-left: 100px;
+    cursor: pointer;
+}
+select option{
+    padding: 50px;
+    font-size: 40px;
+    cursor: pointer;
+    background-color: #000000;
+}
+select option:hover{
+    background-color: red;
+}
+select option:hover {
+    background-color: #45a049; /* تغيير لون الخلفية عند الـ hover */
+    color: #fff; /* تغيير لون النص عند الـ hover */
+}
+label{
+    color: white;
+    font-size: 50px;
+}
+
+
+
+.select{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    
+}
+
+#selectedNumbers{
+
+transition: 1s ;
+display: flex;
+position: absolute;
+bottom: 15%;
+
+gap: 20px;
+margin-top: 30px;
+
+}
+#selectedNumbers div {
+    margin-top: 20px;
+    font-size: 40px;
+    color: #ffffff;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: margin-top 0.5s ease; /* تحديد تأثير الانتقال */
+    font-family: zekton;
+
+   
+
+   
+}
+
+@keyframes reveal {
+    from{
+        opacity: 0;
+        translate: 0rem 10rem;
+    }
+}
+.title{
+    color: white;
+    font-size: 50px;
+    margin-top: 90px;
+    
+}
+
+@keyframes hide {
+    to {
+        opacity: 0;
+        translate: 0rem 10rem;
+
+    }
+}
+
+.unselectable {
+    pointer-events: none;
+    opacity: 0.5; /* يمكنك تعديل الشفافية حسب التفضيلات */
+}
+
+.done{
+    position: absolute;
+    height: 20rem;
+    width: 40rem;
+    border: 3px solid rgb(29, 108, 255);
+    background-color: rgb(10, 10, 10);
+    z-index: 5;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    display: none;
+}
+.doneActive{
+    display: flex;
+    animation: start 1s cubic-bezier(0,.87,.01,.98);
+}
+h2{
+    color: white;
+    font-size: 60px;
+}
+
+button img{
+    width: 50px;
+
+}
+.reset{
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.reset:hover{
+    background-color: none;
+}
+#back{
+    transition: 0.2s;
+}
+#back:hover{
+    background: none;
+    border: none;
+    transform-origin: center;
+    transform: translateX(-10px);
+    
+}
+#reload:hover{
+    background-color: none;
+}
+.data{
+    position: absolute;
+    top: 10%;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    align-items: center;
+    width: 100%;
+
+}
+#timer{
+    color: white;
+    font-size: 30px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: url(timer.png);
+     padding: 40px;
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: contain;
+     filter: grayscale();
+
+    
+}
+
+
+#score{
+    color: white;
+    font-size: 30px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: url(timer.png);
+     padding: 50px;
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: contain;
+     filter: grayscale();
+     
+}
+
+
+.scorebox{
+    width: 200px;
+    position: absolute;
+    z-index: -1;
+    filter: grayscale();
+}
+.timerbox{
+    width: 500px;
+    z-index: 5;
+}
+.arrContainer{
+    position: relative;
+    top:5%;
+}
+.arrbox{
+    z-index: -1;
+    width: 700px;
+    position: absolute;
+    filter: grayscale();
+    top: 34%;
+    display: none;
+    
+}
+
+
+body{
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+h1{
+    color: rgb(255, 255, 255);
+    font-family: zeroHour;
+    font-weight: 400;
+    letter-spacing: 5px;
+    font-size:80px;
+    width: 100%;
+    text-align: center;
+    transition: 1s cubic-bezier(.99,0,.59,1) ;
+}
+
+.polybtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    cursor: pointer;
+    transition: 0.5 ease;
+}
+.polybtn 
+.poly{
+    width: 170px;
+    position: absolute;
+    animation: btnRotate 2s linear infinite;
+    transition: .2s;
+    z-index: 1;
+    transition: 1.5s cubic-bezier(1,-0.01,0,1);
+    animation-play-state: running; /* تشغيل الانيميشن */
+
+
+
+}
+
+@keyframes btnRotate{
+    from{
+        rotate: 360deg;
+    }
+}
+
+.tri{
+    width: 70px;
+    z-index: 1;
+    /* background: linear-gradient(90deg, black , rgb(0, 0, 0)); */
+    /* border-radius: 50%; */
+    padding: 20px;
+    z-index: 2;
+ 
+
+}
+
+.hideGameTitle{
+   translate :0 -20rem;
+
+}
+.getReadyTriTitle{
+    scale:  60;
+    rotate : 180deg;
+    transition :1s cubic-bezier(.32,0,.02,.99);
+
+}
+.getReadyPolyTitle{
+    scale:  0; 
+    transition :  1s cubic-bezier(1,0,.88,.99);
+}
+
+
+
+
+
+.entreTri{
+    scale : 0;
+    rotate : 0deg;
+    transition : .5s cubic-bezier(.99,-0.01,.02,.99);
+
+}
+.entrePoly{
+   transition :  1.5s cubic-bezier(1,-0.01,0,1);
+
+    scale : 20;
+     animation:btnRotate 1.5s cubic-bezier(1,-0.01,0,1) ;
+}
+
+
+.resetTri{
+scale : 1;
+rotate: 0deg;
+}
+
+
+.resetPoly{
+    scale : 1;
+    rotate: 0deg;
+    }
+
+
+
+.button:hover .poly{
+    scale: .8;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 300px;
+    width: 100%;
+    gap: 40px;
+    padding-bottom: 40px;
+    position: absolute;
+    bottom: 0;
+}
+
+button{
+    background: none;
+    color: white;
+    border: none;
+    font-size: 30px;
+    font-family: AL-Majd;
+    /* border: 1px solid; */
+    width: 200px;
+    /* border-top-left-radius: 20px;
+    border-top-right-radius: 20px; */
+    background: linear-gradient(30deg, rgba(0, 0, 0, 0.364) , rgb(29, 29, 29));
+    cursor: pointer;
+    opacity: 100%;
+    border: 1px solid black;
+    transition: 0.2s ease-out;
+
+
+
+}
+button:hover{
+    border: 1px solid white;
+}
+
+.scorpion{
+    width: 5rem;
+    position: absolute;
+    top: 0%;
+    transform-origin: 50% 95%;
+    animation: btnRotate 5s ease-in-out infinite;
+    z-index: -1;
+}
+
+
+#mainmenu{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    mix-blend-mode: screen;
+    position: absolute;
+    display: flex;
+    animation: load 1s ease;
+}
+
+@keyframes load{
+    from{
+        opacity: 0;
+    }
+}
+.win{
+    color: rgb(255, 255, 255);
+    position: absolute;
+    font-size: 10rem;
+    animation: win 1s cubic-bezier(0,.93,0,.98);
+    font-family: AL-Majd;
+    display: none;
+    z-index: 10;
+}
+@keyframes win{
+    0%{
+        opacity: 0;
+        scale: 0;
+    }
+    50%{
+        opacity: 1;
+        scale: 2;
+    }
+    to{
+        opacity: 0;
+        scale: .5;
+    }
+}
+
+
+#particles-js{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    opacity: 1;
+    
+   }
+   .polybtn{
+    position: absolute;
+   }
+   h1{
+    position: fixed;
+    top: 10%;
+   }
+
+   
+   @keyframes newone{
+    to{
+        rotate: 360deg;
+    }
+   }
+
+
+   .cameraWiggle {
+    animation: cameraWiggle 0.1s ease-in-out infinite;
+}
+
+   @keyframes cameraWiggle {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px); /* تحريك العنصر لليسار */
+    }
+    50% {
+        transform: translateX(5px); /* تحريك العنصر لليمين */
+    }
+    75% {
+        transform: translateX(-5px); /* تحريك العنصر لليسار */
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+h2{
+    position: absolute;
+    z-index: 5;
+    opacity: 0;
+    transition: 1s cubic-bezier(.98,0,.02,.98);
+    font-family: Al-Majd ;
+    scale: 0;
+    font-size: 200px;
+    text-align: center;
+    font-weight: 500;
+}
+.h2Active{
+    opacity: 1;
+    scale: 1;
+
+}
+
+.h2Unactive{
+    opacity: 0;
+    scale: 0;
+    transition: .5s cubic-bezier(.98,0,.02,.98);
+
+
+}
+
+@keyframes data{
+    from{
+        transform: translateY(-8rem);
+    }
+}
+
+#timer{
+    animation: data 1s ease-out;
+    display: none;
+
+
+}
+
+#score{
+    animation: data .7s ease-out;
+    display: none;
+
+
+}
+
+
+.guides{
+    width: 100%;
+    height: 10rem;
+    position: absolute;
+    background-color: #00000093;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    font-size: 50px;
+    text-align:  center ;  
+    border: 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    animation: guides 4s cubic-bezier(.78,-0.01,.24,1);
+    top: 150% ;
+    display: none;
+
+}
+@keyframes guides{
+    0%{
+        top: -150%;
+    }
+    50%{
+        top: 40%;
+    }
+}
+
+@keyframes solve{
+    0%{
+        transform: translateY(0rem);
+    }
+
+}
+.guides .solve{
+animation: solve 1s ease;
+}
+.duplicate{
+    width: 30rem;
+    height: 20rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background:linear-gradient(30deg,black,rgb(26, 26, 26));
+    border: 1px solid;
+    z-index: 10;
+    padding-bottom: 10px;
+    flex-direction: column;
+    font-family: Al-majd;
+    border-radius: 10px;
+
+}
+.over,.score{
+    font-family: Al-majd;
+      font-size: 40px;
+
+}
+.score{
+    font-family: poppins;
+}
+h4{
+    font-size: 40px;
+    font-weight: 400;
+
+}
+.mainMenuOff{
+   opacity: 0;
+   transition: 0.5s;
+}
+
+.mainMenuOn{
+    opacity: 1;
+    
+    animation: level .5s ease;
+
+ }
+ 
+
+
+.levels {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+   height: 100vh;
+   flex-direction: column;
+   gap: 40px;
+   display: none ;
+width: 100%;
+opacity: 1;
+width: 100%;
+
+}
+.activelevelSelection{
+    position: absolute;
+    display: flex;
+    animation: level .5s ease;
+
+
+}
+.unActivelevelSelection{
+    position: absolute;
+    display: flex;
+    animation: levelout .5s ease;
+    transition: 0.5s;
+
+
+}
+
+
+.unActiveGame{
+    position: absolute;
+    animation: levelout .5s ease;
+
+
+
+}
+
+
+.reset{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#reload{
+    transition: 0.5s;
+}
+#reload:hover{
+    border: none;
+    rotate: 360deg;
+}
+@keyframes level{
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
+}
+
+@keyframes levelout{
+    from{
+        opacity: 100%;
+    }
+    to{
+        opacity: 0%;
+    }
+}
+
+@keyframes shake {
+    0% {scale: 1 ; }
+    25% { scale: .9; }
+    50% { scale: 1; }
+    75% { scale: .9;}
+    100% { scale: 1;} 
+  }
+  
+@keyframes shake2 {
+    0% {scale: 1.5}
+    25% { scale: 1;}
+    50% { scale: 1.5; }
+    75% { scale: 1;}
+    100% { scale: 1.5; }
+  }
+  
+  body{
+    animation: shake 10s cubic-bezier(.76,-0.01,.33,.98) infinite;
+    scale: 1;
+  }
+  /* h1{
+    animation: shake2  10s  cubic-bezier(.76,-0.01,.33,.98) infinite;
+
+  } */
+  .polybtn{
+    animation: shake2  10s cubic-bezier(.76,-0.01,.33,.98) infinite;
+  }
+
+  #scoreBoard {
+    background-color: #000000;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    height: 50vh;
+    display: none;
+
+}
+
+#scoreBoard h6 {
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 60px;
+
+}
+
+#scoreList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#scoreList li {
+    padding: 5px;
+    border-bottom: 1px solid #ffffff;
+    font-size:20px;
+    color:white;
+}
+
+#scoreList .highest-score {
+    font-weight: bold;
+    color: rgb(0, 255, 0);
+}
+
+
+.gameover{
+    background-color: rgba(0, 0, 0, 0.411) ;
+    position: absolute;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: gameover 2s cubic-bezier(0,.88,.06,.99);
+    display: none;
+    z-index: 10;
+    height: 100vh;
+    width: 100%;
+    /* backdrop-filter: blur(10px) ;
+    -webkit-backdrop-filter: blur(15px); */
+    
+
+}
+.box{
+    width: 25rem;
+    height: 10rem;
+    background:linear-gradient(30deg,black,rgb(26, 26, 26));
+    color: white;
+    position: absolute;
+    font-size: 40px;
+    border: 2px solid;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    
+}
+@keyframes gameover{
+    from{
+        scale: 2;
+        filter: invert();
+        background-color: rgb(255, 255, 255) ;
+    }
+}
+
+
+@media(max-width: 465px) {
+
+    h1{
+        font-size:60px;
+        top: 15%;
+    
+    }
+    .polybtn .poly{
+        width: 140px;
+    }
+    .tri{
+        width: 50px;
+    }
+    }
+    
+@media(max-height: 850px) {
+
+    h1{
+        font-size:60px;
+        top: 15%;
+    
+    }
+    .polybtn{
+        top: 40%;
+    }
+    .polybtn .poly{
+        width: 140px;
+    }
+    .tri{
+        width: 50px;
+    }
+    }
+       
+@media(max-height: 700px) {
+
+    h1{
+        font-size:60px;
+        top: 15%;
+    
+    }
+    .polybtn{
+        top: 35%;
+    }
+    .polybtn .poly{
+        width: 140px;
+    }
+    .tri{
+        width: 50px;
+    }
+    }
+    
+  
+    @media(max-width: 360px) {
+    
+        h1{
+            font-size:50px;
+        
+        }
+        .polybtn .poly{
+            width: 130px;
+        }
+        .tri{
+            width: 40px;
+        }
+    
+        .menu button{
+            font-size: 20px ;
+        }
+    
+    }
+          
+    @media(max-width: 300px) {
+    
+        h1{
+            font-size:40px;
+        
+        }
+        }
+
+                
+@media(max-height: 618px) {
+
+    
+    .polybtn{
+        top: 30%;
+    }
+    .polybtn .poly{
+        width: 100px;
+    }
+    .tri{
+        width: 40px;
+    }
+    }
+
+
+
+    
+@media(max-width: 550px) {
+      
+     
+#numbersContainer span {
+   
+    width: 80px;
+    height: 50px;
+    font-size: 30px;
+    
+
+}
+.data{
+    gap: 20px;
+    
+}
+#score , #timer{
+
+    font-size: 30px;
+}
+   
+    }
+
+      
+@media(max-width: 455px) {
+      
+     
+    #numbersContainer{
+        gap: 60px;
+    }
+    #numbersContainer span{
+       
+        width: 80px;
+        height: 50px;
+        font-size: 30px;
+        
+    
+    }
+    .data{
+        gap: 20px;
+    }
+    #score , #timer{
+    
+        font-size: 25px;
+    }
+       
+        }
+        
+
+        
+        @media(max-width: 700px) {
+      
+     
+              .win{
+                font-size: 100px;
+              }
+               
+                }
+    
+                @media(max-width: 455px) {
+                          h2{
+                            font-size: 80px;
+                          }
+     
+                        }
+        @media(max-width: 399px) {
+      
+     
+            #numbersContainer{
+                gap: 50px;
+            }
+            #numbersContainer span {
+               
+                width: 80px;
+                height: 50px;
+                font-size: 30px;
+                
+            
+            }
+            .win{
+                font-size:70px;
+              }
+            .data{
+                gap: 10px;
+            }
+      
+               
+                }
+
+                
+        @media(max-width: 388px) {
+      
+     
+            #numbersContainer{
+                gap: 50px;
+            }
+            #numbersContainer span {
+               
+                width: 70px;
+                height: 60px;
+                font-size: 25px;
+                
+            
+            }
+            .win{
+                font-size:60px;
+              }
+            .data{
+                gap: 10px;
+            }
+            #score , #timer{
+                font-size: 20px;
+            }
+               
+                }
+
+
+                @media(max-width: 360px) {
+      
+     
+                    #numbersContainer{
+                        gap: 50px;
+                    }
+                    #numbersContainer span {
+                       
+                        width: 60px;
+                        height: 40px;
+                        font-size: 25px;
+                        
+                    
+                    }
+                    .data{
+                        gap: 10px;
+                    }
+                    #score , #timer{
+                        font-size: 15px;
+                    }
+                    #selectedNumbers div{
+                        font-size: 20px;
+                    }
+                       
+                        }
+                        @media(max-width: 650px) {
+
+                            #selectedNumbers div{
+                                font-size: 30px;
+                                letter-spacing: 1px;
+                            }
+                            
+                        }
+
+                        @media(max-width: 500px) {
+                            #selectedNumbers {
+                             gap: 10px;
+                            }
+                            #selectedNumbers div{
+                                font-size: 20px;
+                                letter-spacing: 1px;
+                            }
+                            
+                        }
+                @media(max-width: 330px) {
+      
+     
+                    #selectedNumbers div{
+                        font-size: 15px;
+                        letter-spacing: 1px;
+                    }
+                       
+                        }
+
+                        @media(max-height: 771px) {
+      
+     
+                            .data{
+                                top: 5%;
+                            }
+                            #buttonsContainer{
+                                margin: 0;
+                            }
+                            .reset{
+                                width: 60px;
+                                height: 60px;
+
+                            }
+                               
+                                }
+                                @media(max-height: 695px) {
+      
+     
+                                    .data{
+                                        top: 3%;
+                                    }
+                                 
+                                       
+                                        }
+                                        @media(max-height: 620px) {
+      
+     
+                                            .data{
+                                                top: 3%;
+                                            }
+                                         
+                                            .arrContainer{
+                                                gap: 0px;
+                                            }
+                                            #buttonsContainer{
+                                                margin: 0;
+                                            }
+                                    
+                                                }
+                                                @media(max-width: 317px) {
+      
+     
+                                                    #numbersContainer{
+                                                        gap: 40px;
+                                                        grid-template-columns: repeat(2, 1fr); /* ثلاثة أعمدة بنسبة متساوية */
+
+                                                    }
+                                                    #numbersContainer span, #selectedNumbers span {
+                                                       
+                                                        width: 60px;
+                                                        height: 40px;
+                                                        font-size: 25px;
+                                                        
+                                                    
+                                                    }
+                                                    .data{
+                                                        gap: 0px;
+                                                        flex-direction: column;
+                                                        top: 0;
+
+                                                    }
+                                      
+                                                    
+                                                       
+                                                        }
+
+                                                      
